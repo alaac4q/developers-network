@@ -5,7 +5,9 @@ const User = mongoose.model('users');
 const keys = require('../config/keys');
 
 const opts = {};
-opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
+// opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
+opts.jwtFromRequest = ExtractJwt.fromAuthHeaderWithScheme('jwt');
+
 
 if (process.env.NODE_ENV === 'production') {
   opts.secretOrKey = process.env.secretOrKey; 
@@ -13,6 +15,7 @@ if (process.env.NODE_ENV === 'production') {
   opts.secretOrKey = keys.secretOrKey;
 }
 
+opts.passReqToCallback = false
 
 module.exports = passport => {
   passport.use(
