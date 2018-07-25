@@ -51,9 +51,15 @@ if (process.env.NODE_ENV === 'production') {
 // const host = 'localhost';
 // const port = 5000;
 
-const host = '0.0.0.0';
-const port = process.env.PORT || 5000;
+// const host = '0.0.0.0';
+// const port = process.env.PORT || 5000;
 
-app.listen(port, host, function() {
-  console.log("Server started.......");
+// app.listen(port, host, function() {
+//   console.log("Server started.......");
+// });
+
+var server_port = process.env.PORT || process.env.PORT || 5000;
+var server_host = process.env.HOST || '0.0.0.0';
+server.listen(server_port, server_host, function() {
+    console.log('Listening on port %d', server_port);
 });
