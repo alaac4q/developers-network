@@ -6,6 +6,7 @@ const users = require('./routes/api/users');
 const profile = require('./routes/api/profile');
 const posts = require('./routes/api/posts');
 const morgan = require('morgan')
+const path = require('path')
 
 const app = express();
 
@@ -13,14 +14,13 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(morgan('dev'));
+app.use(express.static(path.join(__dirname, 'client/build'))); //Serve statically everything that is in the client folder
 
 // DB Config
-// const db = require('./config/keys').mongoURI;
-const db = 'mongodb://dev:1qaz1qaz@ds153851.mlab.com:53851/dev'
+const mongoURI = require('./config/keys').mongoURI;
 
-// Connect to MongoDB
 mongoose
-  .connect(db)
+  .connect(mongoURI)
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
 
@@ -34,6 +34,8 @@ require('./config/passport')(passport);
 app.use('/api/users', users);
 app.use('/api/profile', profile);
 app.use('/api/posts', posts);
+
+//Serves the front end once built
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname + 'client/build/index.html'));
 });
