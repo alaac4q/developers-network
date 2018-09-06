@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'client/build'))); //Serve statically everything that is in the client folder
 
-// DB Config
+// DB URI
 const mongoURI = require('./config/keys').mongoURI;
 
 mongoose
