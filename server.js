@@ -5,15 +5,18 @@ const passport = require('passport');
 const users = require('./routes/api/users');
 const profile = require('./routes/api/profile');
 const posts = require('./routes/api/posts');
+const morgan = require('morgan')
 
 const app = express();
 
 // Body parser middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(morgan('dev'));
 
 // DB Config
-const db = require('./config/keys').mongoURI;
+// const db = require('./config/keys').mongoURI;
+const db = 'mongodb://dev:1qaz1qaz@ds153851.mlab.com:53851/dev'
 
 // Connect to MongoDB
 mongoose

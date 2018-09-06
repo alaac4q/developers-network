@@ -9,11 +9,13 @@ opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
 // opts.jwtFromRequest = ExtractJwt.fromAuthHeaderWithScheme('jwt');
 
 
-if (process.env.NODE_ENV === 'production') {
-  opts.secretOrKey = process.env.secretOrKey; 
-} else {
-  opts.secretOrKey = keys.secretOrKey;
-}
+// if (process.env.NODE_ENV === 'production') {
+//   opts.secretOrKey = process.env.secretOrKey; 
+// } else {
+//   opts.secretOrKey = keys.secretOrKey;
+// }
+
+opts.secretOrKey = 'secret';
 
 opts.passReqToCallback = false
 

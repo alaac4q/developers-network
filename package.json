@@ -1,15 +1,11 @@
 {
   "name": "dev",
   "version": "1.0.0",
-  "description": "Social network for developers",
+  "description": "network for developers",
   "main": "server.js",
   "scripts": {
-    "client-install": "npm install --prefix client",
     "start": "nodemon server.js",
-    "server": "nodemon server.js",
-    "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "server": "nodemon server.js"
   },
   "author": "Sami Alaa Al Sudani",
   "license": "MIT",
@@ -33,13 +29,6 @@
   "engines": {
     "node": "v8.9.1",
     "npm": "5.5.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/alaac4q/Developers-Social-Network-App.git"
-  },
-  "bugs": {
-    "url": "https://github.com/alaac4q/Developers-Social-Network-App/issues"
-  },
-  "homepage": "https://github.com/alaac4q/Developers-Social-Network-App#readme"
+  }
+
 }
