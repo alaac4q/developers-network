@@ -3,7 +3,7 @@ Social networking application for developers to make profile and creat posts
 it also pull the last five projects from your github just by adding your github profile so other developers can see your work if it's in public status .
 you can post and add comments after you sign up but you don't have to sign up in case you were looking for developers profiles.
 
-created using React Js, Node Js, Mongo DB
+created using React Js, Redux, Node Js, Mongo DB
 
 ![developers](https://user-images.githubusercontent.com/32101657/45199021-abcbb680-b237-11e8-9950-1f8b4790325a.gif)
 
