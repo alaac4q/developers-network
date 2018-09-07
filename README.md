@@ -1,6 +1,6 @@
 # developers-network
 
-https://developersnetwork.herokuapp.com/login
+https://developersnetwork.herokuapp.com
 
 Social networking application for developers to make profile and creat posts 
 it also pull the last five projects from your github just by adding your github profile so other developers can see your work if it's in public status .
